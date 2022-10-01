@@ -1,0 +1,526 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    font-family: 'Oswald', sans-serif;
+    /* font-size: 20px; */
+}
+
+.section--padding {
+    padding: 100px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* HEADER */
+.header__content li {
+    list-style: none;
+    display: inline;
+    padding: 2rem;
+    transition: all 0.5s;
+}
+
+.header__content li:hover {
+    color: #e62b4a;
+}
+
+.header__content a {
+    text-decoration: none;
+    color: white;
+    font-size: 17px;
+}
+
+header {
+    /* background-color: brown; */
+    color: white;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+}
+
+.header__content {
+    margin: 0 auto;
+    width: 75%;
+    display: flex;
+    padding: 26px 0;
+    /* background-color: pink; */
+    /* justify-content: canw chinhr nội dung theo chiều ngang */
+    justify-content: space-between;
+    /* align-item: căn chỉnh nội dung theo chiều dọc */
+    align-items: center;
+    padding: 20px 0;
+}
+
+.header__content .header__logo {
+    /* 1rem - 18px */
+    font-size: 2rem;
+    font-weight: 700;
+
+}
+
+/* CAROUSEL */
+.carousel {
+    background-image: url(../image-video/home_slider.jpg);
+    height: 700px;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.carousel__content button {
+    padding: 15px 25px;
+    margin: 20px;
+    background-color: #e62b4a;
+    border: 1px solid #e62b4a;
+    color: white;
+    transition: all 0.5s;
+    font-style: uppercase;
+    cursor: pointer;
+}
+
+.carousel__content button:hover {
+    background-color: #af2239;
+}
+
+.carousel__content h1 {
+    font-size: 75px;
+    line-height: 90px;
+}
+
+.carousel__icon {
+    font-size: 1.75rem;
+    /* animation */
+    /* name: tên hiệu ứng, tên keyframe, tên chu kì
+    duration: quãng thời gian để keyframe thực hiện 1 chu kì
+    timing-function:  quy định tốc độ nhanh chậm trong 1 chu kì
+    delay: độ trễ của hiệu ứng, mặc định là 0
+    iteration-count: đếm số lần lặp lại chu kì, lặp vô tận thì để giá trị là infinite
+    direction và fill-mode: tạo hiệu ứng ngược lại từ to -> from */
+    animation: upDown 1s linear infinite;
+}
+
+e
+/* Blog */
+
+.blog__title {
+    color: #888888;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.blog__title p:first-of-type {
+    font-size: 14px;
+}
+
+.blog__title p:last-of-type {
+    padding: 30px 0;
+}
+
+.blog__title h1 {
+    font-size: 50px;
+    color: black;
+}
+
+.blog__content {
+    display: grid;
+    /* Khai báo khi các hàng có kích thước bằng nhau */
+    gap: 30px;
+    /* display: grid ở đâu thì gap phải ở chung đó */
+    grid-template-columns: repeat(4, 1fr);
+    /* trong đó 4 là số ô kích thước 1fr trên một hàng, đơn vị fr chỉ dùng cho thằng grid */
+    width: 100%;
+    margin: auto;
+}
+
+.blog__item1 {
+    /* Cách 1: đường bắt đầu / span số cột (số hàng) cần chiếm
+    grid-column: 1 / span 2;
+    grid-row: 1 /span 2; */
+    /* Cách 2: đường bắt đầu / đường kết thúc */
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 2;
+}
+
+.blog__item10 {
+    grid-column: 3 / 5;
+    grid-row: 3 / 5;
+}
+
+.blog__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /*- Dùng bg khi hạm vi sử dụng lớn, kích thước vùng phủ rộng, công dụng làm đẹp web, kh cần SEO
+    - Dùng img khi ảnh cần dc SEO ( nhờ thuộc tính alt), phạm vi kích thước nhỏ, các ảnh lưu trử ở Backend */
+    filter: grayscale(50%) contrast(50%);
+    transition: all 0.5s;
+}
+
+.blog__item {
+    position: relative;
+    overflow: hidden;
+}
+
+.blog__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #e62b4a8b;
+    width: 100%;
+    height: 100%;
+    color: white;
+    transition: all 0.5s;
+}
+
+.blog__text {
+    position: absolute;
+    left: 25px;
+    bottom: 35px;
+}
+
+.blog__icon {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    background-color: #ffffff;
+    text-align: center;
+    line-height: 35px;
+    font-size: 14px;
+    color: black;
+    top: 35px;
+    right: 35px;
+}
+
+/* Trước hover */
+.blog__item .blog__icon {
+    transform: translateY(20px);
+    transition: all .5s;
+}
+
+/* Sau hover */
+.blog__item:hover .blog__icon {
+    transform: translateY(0px);
+}
+
+.blog__item .blog__text {
+    transform: translateY(35px);
+    transition: all 0.5s;
+}
+
+.blog__item:hover .blog__text {
+    transform: translateY(0px);
+}
+
+.blog__overlay {
+    opacity: 0;
+}
+
+.blog__item:hover .blog__overlay {
+    opacity: 1;
+}
+
+/* NUMBER */
+.number {
+    background-color: black;
+    color: white;
+}
+
+.number__content {
+    width: 80%;
+    margin: 0 auto;
+    justify-content: space-between;
+    display: flex;
+    text-align: center;
+}
+
+.number__item p:first-of-type {
+    font-size: 4rem;
+}
+
+.number__item p:last-of-type {
+    font-size: 1rem;
+    color: gray;
+}
+
+/* EXP */
+.exp {
+    background-image: url(../image-video/bussiness_img_1.jpg);
+    background-position: center;
+    background-size: cover;
+    /* cố định hình nền */
+    background-attachment: fixed;
+}
+
+.exp__content {
+    margin: 0 auto;
+    width: 80%;
+}
+
+.exp__content video {
+    width: 100%;
+}
+
+.exp__title p:first-of-type {
+    color: #e62b4a;
+    font-size: 15px;
+    font-weight: 200;
+}
+
+.exp__title h1 {
+    color: white;
+    font-size: 50px;
+}
+
+.exp__title p:last-of-type {
+    color: #888888;
+    padding: 30px;
+}
+
+.exp__title {
+    text-align: center;
+    justify-content: center;
+}
+
+/* CONTACT */
+.contact__title {
+    text-align: center;
+    justify-content: center;
+}
+
+.contact__title h1 {
+    font-size: 50px;
+}
+
+.contact__title p {
+    color: #888888;
+    padding: 20px;
+}
+
+.contact__content {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact__form form {
+    flex-direction: column;
+    display: flex;
+}
+
+.contact__map {
+    width: 60%;
+}
+
+.contact__map iframe {
+    width: 100%;
+}
+
+.contact__form {
+    width: 40%;
+}
+
+.contact__form input,
+.contact__form textarea {
+    font-size: 15px;
+    padding: 1em;
+    margin-bottom: 2em;
+    border: 2px solid #888888;
+    border-radius: 15px;
+}
+
+.submitbutton {
+    font-size: 15px;
+    padding: 1.5em;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    transition: all 0.5s;
+}
+
+.submitbutton:hover {
+    background-color: #e62b4a;
+    border: 1px solid #e62b4a;
+    transition: all .5s;
+    letter-spacing: 1px;
+}
+
+/* FOOTER */
+.footer {
+    background-color: black;
+    color: #ffffff;
+}
+
+.footer__content {
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.footer__content a {
+    display: inline-block;
+    text-decoration: none;
+    width: 54px;
+    height: 54px;
+    background-color: rgba(255, 255, 255, 0.2);
+    line-height: 54px;
+    text-align: center;
+    font-size: 16px;
+    color: #ffffff;
+    border-radius: 50%;
+    margin-left: 5px;
+    transition: .5s;
+}
+
+.footer__content p {
+    font-size: 14px;
+}
+
+.footer__content a:hover {
+    background-color: #e62b4a;
+    transition: .5s;
+}
+
+/* service */
+.service__title p:first-of-type {
+    color: #e62b4a;
+    font-size: 15px;
+    font-weight: 200;
+}
+
+.service__title h1 {
+    color: white;
+    font-size: 50px;
+}
+
+.service__title p:last-of-type {
+    color: #888888;
+    padding: 30px;
+}
+
+.service__title {
+    text-align: center;
+    justify-content: center;
+}
+
+.service {
+    background-color: black;
+}
+
+.service__content {
+    color: #888888;
+    margin: 0 auto;
+    width: 75%;
+}
+
+.service__item {
+    width: 200px;
+    height: 190px;
+    background-color: white;
+    color: #848482;
+    text-align: center;
+    justify-content: center;
+    margin: 10px;
+    position: relative;
+    display: flex;
+}
+
+.service__content .slick-dots li.slick-active button:before {
+    color: #e62b4a;
+    font-size: 15px;
+}
+
+.service__content .slick-dots li button::before {
+    color: white;
+}
+
+.service__item::before {
+    content: '';
+    width: 5px;
+    height: 0;
+    display: block;
+    background-color: #af2239;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.service__item:hover:before {
+    /* transform: translateY(20px); */
+    transition: all .5s;
+    height: 100%;
+}
+
+.service__content .service__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.service__item i {
+    font-size: 40px;
+}
+
+/* KEYFRAME */
+@keyframes upDown {
+
+    /* cách 1: điểm bắt đầu, điểm kết thúc */
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+}
+
+/* BACK TO TOP */
+.backTotop {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    justify-content: center;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.25);
+    color: white;
+    /* đặt vị trí cố định */
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+    /* ẩn nút back to top */
+    visibility: hidden;
+    opacity: 1;
+}
+
+
+/* hiện nút back to top */
+.cd-top--is-visible {
+    visibility: visible;
+    opacity: 1;
+}
